@@ -41,3 +41,10 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-08-11 14:42:47 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/mfduan/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/mfduan/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (6.6ms)
+Completed 200 OK in 26ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
