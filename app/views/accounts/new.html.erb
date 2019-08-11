@@ -1,0 +1,11 @@
+<%= form_for @account do |f| %>
+    Username: <%= f.text_field :name %><br>
+    Password: <%= f.password_field :password %><br>
+    Balance: <%= f.text_field :balance %><br>
+    Broker Account: <%= f.check_box :broker_acc %>
+    <br>
+    <br>
+    <%= f.submit "Create Account" %>
+   <% end %>
+   
+   <%= link_to "log In", login_path %>

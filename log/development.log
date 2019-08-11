@@ -144,3 +144,482 @@ Processing by AccountsController#index as HTML
 Completed 200 OK in 1062ms (Views: 1060.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-08-11 15:59:04 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mfduan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered accounts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 422ms (Views: 413.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 15:59:10 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/mfduan/Development/xchange/app/views/accounts/new.html.erb:5: syntax error, unexpected ')', expecting =>
+...broker_acc", "Broker Account" );@output_buffer.safe_append='...
+...                              ^
+/Users/mfduan/Development/xchange/app/views/accounts/new.html.erb:7: syntax error, unexpected end, expecting ')'
+'.freeze;    end 
+             ^~~
+/Users/mfduan/Development/xchange/app/views/accounts/new.html.erb:10: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/mfduan/Development/xchange/app/views/accounts/new.html.erb:12: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/accounts/new.html.erb:5: syntax error, unexpected ')', expecting =>
+app/views/accounts/new.html.erb:7: syntax error, unexpected end, expecting ')'
+app/views/accounts/new.html.erb:10: syntax error, unexpected ensure, expecting ')'
+app/views/accounts/new.html.erb:12: syntax error, unexpected end, expecting ')'
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:01:32 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/mfduan/Development/xchange/app/views/accounts/new.html.erb:12: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/accounts/new.html.erb:12: syntax error, unexpected end-of-input, expecting end
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:01:43 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @account do |f| %>
+    2:     Username: <%= f.text_field :name %>
+    3:     Password: <%= f.password_field :password %>
+    4:     Balance: <%= f.text_field :balance %>
+  
+app/views/accounts/new.html.erb:1:in `_app_views_accounts_new_html_erb___958845922145389411_70253115510540'
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:02:03 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 76ms (Views: 54.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:02:55 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for "Broker Account":String):
+    2:     Username: <%= f.text_field :name %>
+    3:     Password: <%= f.password_field :password %>
+    4:     Balance: <%= f.text_field :balance %>
+    5:     <%= f.check_box :broker_acc, "Broker Account", id: "broker_acc" %></br>
+    6:     <%= f.submit "Create Account" %>
+    7:    <% end %>
+    8:    
+  
+app/views/accounts/new.html.erb:5:in `block in _app_views_accounts_new_html_erb___958845922145389411_70253155254740'
+app/views/accounts/new.html.erb:1:in `_app_views_accounts_new_html_erb___958845922145389411_70253155254740'
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:04:26 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for "Broker Account":String):
+    2:     Username: <%= f.text_field :name %>
+    3:     Password: <%= f.password_field :password %>
+    4:     Balance: <%= f.text_field :balance %>
+    5:     <%= f.check_box :broker_acc, "Broker Account" %></br>
+    6:     <%= f.submit "Create Account" %>
+    7:    <% end %>
+    8:    
+  
+app/views/accounts/new.html.erb:5:in `block in _app_views_accounts_new_html_erb___958845922145389411_70253149786260'
+app/views/accounts/new.html.erb:1:in `_app_views_accounts_new_html_erb___958845922145389411_70253149786260'
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:04:42 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:05:08 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 95ms (Views: 92.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:05:26 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:05:41 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/mfduan/Development/xchange/app/views/accounts/new.html.erb:5: syntax error, unexpected tSTRING_BEG, expecting ')'
+...end=( f.check_box :broker_acc "Broker Account" );@output_buf...
+...                              ^):
+  
+app/views/accounts/new.html.erb:5: syntax error, unexpected tSTRING_BEG, expecting ')'
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:06:22 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:06:37 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:06:44 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 55ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:06:59 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 67ms (Views: 65.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:07:05 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:09:35 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 41ms (Views: 28.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-11 16:09:38 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fZK5A9cAC6lzrysnyyw6j+oqCfOEp3z4YnmEPXaFrbEfP2ktG0e41aqI3fAfoOOzWjpQqCk3DuChPbB1/NayLQ==", "account"=>{"name"=>"", "password"=>"[FILTERED]", "balance"=>"", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+Redirected to http://localhost:3000new
+Completed 302 Found in 21ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-11 16:10:04 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fZK5A9cAC6lzrysnyyw6j+oqCfOEp3z4YnmEPXaFrbEfP2ktG0e41aqI3fAfoOOzWjpQqCk3DuChPbB1/NayLQ==", "account"=>{"name"=>"", "password"=>"[FILTERED]", "balance"=>"", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+Redirected to http://localhost:3000new
+Completed 302 Found in 22ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/accounts" for ::1 at 2019-08-11 16:10:38 -0400
+  
+SyntaxError (/Users/mfduan/Development/xchange/app/controllers/accounts_controller.rb:19: `@' without identifiers is not allowed as an instance variable name
+/Users/mfduan/Development/xchange/app/controllers/accounts_controller.rb:19: syntax error, unexpected end-of-input
+        @
+        ^):
+  
+app/controllers/accounts_controller.rb:19: `@' without identifiers is not allowed as an instance variable name
+app/controllers/accounts_controller.rb:19: syntax error, unexpected end-of-input
+Started GET "/accounts" for ::1 at 2019-08-11 16:20:53 -0400
+  
+SyntaxError (/Users/mfduan/Development/xchange/app/controllers/accounts_controller.rb:39: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/accounts_controller.rb:39: syntax error, unexpected end-of-input, expecting end
+Started GET "/accounts" for ::1 at 2019-08-11 16:21:05 -0400
+  
+SyntaxError (/Users/mfduan/Development/xchange/app/controllers/accounts_controller.rb:28: syntax error, unexpected end
+    end
+    ^~~
+/Users/mfduan/Development/xchange/app/controllers/accounts_controller.rb:41: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/accounts_controller.rb:28: syntax error, unexpected end
+app/controllers/accounts_controller.rb:41: syntax error, unexpected end-of-input, expecting end
+Started GET "/accounts" for ::1 at 2019-08-11 16:21:18 -0400
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered accounts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:21:24 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 71ms (Views: 42.8ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-11 16:21:26 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bdbg9uqv8jJMRt3j2cqertVTQPunX9EycpvMK2drP2VnezDYJuhBTpVhKzQNRkeSZUMZoArPoyqx3/hj7Tgg+Q==", "account"=>{"name"=>"", "password"=>"[FILTERED]", "balance"=>"", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+Redirected to http://localhost:3000new
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-11 16:22:31 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bdbg9uqv8jJMRt3j2cqertVTQPunX9EycpvMK2drP2VnezDYJuhBTpVhKzQNRkeSZUMZoArPoyqx3/hj7Tgg+Q==", "account"=>{"name"=>"", "password"=>"[FILTERED]", "balance"=>"", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 66ms (Views: 42.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-11 16:22:44 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jk5QAS8Ng8b5gvUyafT5+wLlsMMDwd2SS4Sf+UJtj8ZE44Av40owuiClA+W9eCDHsvXpmK5Rr4qIwKuxyD6QWg==", "account"=>{"name"=>"", "password"=>"[FILTERED]", "balance"=>"", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[36mAccount Create (2.0ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["password_digest", "$2a$12$LOBvExw2WxUA5Sd78Ezezufi9Wjl8ZIrD5dlnrZfOJ9wfmX.oDZyy"], ["created_at", "2019-08-11 20:22:44.881295"], ["updated_at", "2019-08-11 20:22:44.881295"]]
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+Completed 500 Internal Server Error in 593ms (ActiveRecord: 3.5ms)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<AccountsController:0x00007fca2ccc3758>):
+  
+app/controllers/accounts_controller.rb:10:in `create'
+Started POST "/accounts" for ::1 at 2019-08-11 16:23:42 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jk5QAS8Ng8b5gvUyafT5+wLlsMMDwd2SS4Sf+UJtj8ZE44Av40owuiClA+W9eCDHsvXpmK5Rr4qIwKuxyD6QWg==", "account"=>{"name"=>"", "password"=>"[FILTERED]", "balance"=>"", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["password_digest", "$2a$12$vMLgoXTvwKn.DJBWK3i5r.Bf0RlUQAiTDB6HHWORbXNTzgRfRR9eq"], ["created_at", "2019-08-11 20:23:43.008982"], ["updated_at", "2019-08-11 20:23:43.008982"]]
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+Completed 500 Internal Server Error in 479ms (ActiveRecord: 3.4ms)
+
+
+  
+NameError (undefined local variable or method `account_id' for #<AccountsController:0x00007fca2850c220>
+Did you mean?  account_url
+               @account):
+  
+app/controllers/accounts_controller.rb:10:in `create'
+Started POST "/accounts" for ::1 at 2019-08-11 16:25:26 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jk5QAS8Ng8b5gvUyafT5+wLlsMMDwd2SS4Sf+UJtj8ZE44Av40owuiClA+W9eCDHsvXpmK5Rr4qIwKuxyD6QWg==", "account"=>{"name"=>"", "password"=>"[FILTERED]", "balance"=>"", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["password_digest", "$2a$12$FgpWuj3ssfPqhhb6Zp2Za.2/snjtee.jOJDszVY/2CbUNE8VCfqvO"], ["created_at", "2019-08-11 20:25:26.956302"], ["updated_at", "2019-08-11 20:25:26.956302"]]
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+Completed 500 Internal Server Error in 644ms (ActiveRecord: 2.7ms)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<AccountsController:0x00007fca2c59cce0>):
+  
+app/controllers/accounts_controller.rb:10:in `create'
+Started POST "/accounts" for ::1 at 2019-08-11 16:25:36 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jk5QAS8Ng8b5gvUyafT5+wLlsMMDwd2SS4Sf+UJtj8ZE44Av40owuiClA+W9eCDHsvXpmK5Rr4qIwKuxyD6QWg==", "account"=>{"name"=>"", "password"=>"[FILTERED]", "balance"=>"", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[36mAccount Create (0.8ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["password_digest", "$2a$12$Vrp8wbIEu8YbUYJma1tDw.fzPH8akZwrJwQMLWV2XSknTDDjCSkfq"], ["created_at", "2019-08-11 20:25:37.257560"], ["updated_at", "2019-08-11 20:25:37.257560"]]
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+Redirected to http://localhost:3000/accounts/4
+Completed 302 Found in 324ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/accounts/4" for ::1 at 2019-08-11 16:25:37 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"4"}
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `logged_in?' for #<AccountsController:0x00007fca2c337180>
+Did you mean?  logger):
+  
+app/controllers/accounts_controller.rb:19:in `show'
+Started GET "/" for ::1 at 2019-08-11 16:28:04 -0400
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered accounts/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:28:11 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 70ms (Views: 43.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-11 16:28:14 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gP6Ezb0l5UtqSFAeUoBAIfZVrm+vONx0GxghZEpoJVviU1TjcWJWN7NvpsmGDJkdRkX3NAKormzYXBUswDs6xw==", "account"=>{"name"=>"", "password"=>"[FILTERED]", "balance"=>"", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-11 16:28:18 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uSeSOsJzPG+zMC9ZNiEcbg3mAVCOx/BUnpGA8/2c5YfbikIUDjSPE2oX2Y7ircVSvfZYCyNXgkxd1bS7d8/6Gw==", "account"=>{"name"=>"", "password"=>"[FILTERED]", "balance"=>"", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["password_digest", "$2a$12$hOlTLe39Hg1BI.z12GeBHO9wGTv73CvPAItdVTKShlaGj9W4QsyI."], ["created_at", "2019-08-11 20:28:19.043749"], ["updated_at", "2019-08-11 20:28:19.043749"]]
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+Redirected to http://localhost:3000/accounts/5
+Completed 302 Found in 301ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/accounts/5" for ::1 at 2019-08-11 16:28:19 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<AccountsController:0x00007fca287e24b8>
+Did you mean?  current_account):
+  
+app/controllers/accounts_controller.rb:20:in `show'
+Started GET "/accounts/5" for ::1 at 2019-08-11 16:28:39 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 52ms (Views: 36.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-08-11 16:41:39 -0400
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered accounts/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:41:52 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 101ms (Views: 43.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-11 16:42:01 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxuAKKFOyLrJeanLWeyWeC6/RTazdBJWll0CeVkB7vNBtlAGbQl7xhBeXxyNYE9Enq8cbR7kYE5VGTYx01Lxbw==", "account"=>{"name"=>"1", "password"=>"[FILTERED]", "balance"=>"100", "broker_acc"=>"0"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "password_digest", "balance", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "1"], ["password_digest", "$2a$12$p3iBGevTq20SqTI2VjXs2O5xvHJGwQJkeJlxNokXz8V4m5woxkYtq"], ["balance", 100], ["created_at", "2019-08-11 20:42:01.684034"], ["updated_at", "2019-08-11 20:42:01.684034"]]
+  ↳ app/controllers/accounts_controller.rb:9
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:9
+Redirected to http://localhost:3000/accounts/6
+Completed 302 Found in 290ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/accounts/6" for ::1 at 2019-08-11 16:42:01 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p>Name: <%= @account.name %></p>
+    2: <p>Balance: <%= @account.balance %></p>
+  
+app/views/accounts/show.html.erb:1:in `_app_views_accounts_show_html_erb__800825905613495592_70253153422560'
+Started GET "/accounts/6" for ::1 at 2019-08-11 16:42:26 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 57ms (Views: 30.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:42:35 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 84ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:42:37 -0400
+  
+SyntaxError (/Users/mfduan/Development/xchange/app/controllers/sessions_controller.rb:17: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/sessions_controller.rb:17: syntax error, unexpected end-of-input, expecting end
+Started GET "/accounts/new" for ::1 at 2019-08-11 16:43:04 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 50ms (Views: 29.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for ::1 at 2019-08-11 16:43:06 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @account do |f| %>
+    2:     Account Name: <%= f.text_field :name %><br>
+    3:     Password: <%= f.password_field :password %><br>
+    4:     <br>
+  
+app/views/sessions/new.html.erb:1:in `_app_views_sessions_new_html_erb__1116334925597244605_70253151595360'
+Started GET "/login" for ::1 at 2019-08-11 16:43:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 65ms (Views: 44.7ms | ActiveRecord: 1.6ms)
+
+

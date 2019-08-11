@@ -3,4 +3,6 @@ class Account < ApplicationRecord
 
     has_many :holdings
     has_many :stocks, through: :holdings
+
+    
 end
