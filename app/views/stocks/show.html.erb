@@ -1,0 +1,8 @@
+<p>Stock Name: <%= @stock.name %></p>
+<p>Stock Price: <%= @stock.price %></p>
+
+<% if current_account.broker_acc %>
+<%= link_to "Edit Stock", edit_stock_path %>
+<%end%>
+
+<%= link_to "Stock Selection", stocks_path %>

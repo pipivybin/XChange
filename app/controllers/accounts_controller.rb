@@ -10,7 +10,7 @@ class AccountsController < ApplicationController
             session[:acc_id] = @account.id
             redirect_to account_path(@account)
         else
-            flash[:alert] = "Please fill in all the information"
+            flash[:error] = "Please fill in all the information"
             render 'new'
         end
     end

@@ -1,2 +1,10 @@
+<% if flash[:error] %>
+	<%= flash[:error] %>
+<% end %>
+
 <p>Name: <%= @account.name %></p>
 <p>Balance: <%= @account.balance %></p>
+<link_to "Edit Information" edit_account_path>
+
+
+<%= link_to "Stock Page", stocks_path %>
