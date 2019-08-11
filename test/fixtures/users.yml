@@ -1,19 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  username: MyString
   password_digest: MyString
-  happiness: 1
-  tickets: 1
-  height: 1
-  nausea: 1
-  admin: false
+  email: MyString
 
 two:
-  name: MyString
+  username: MyString
   password_digest: MyString
-  happiness: 1
-  tickets: 1
-  height: 1
-  nausea: 1
-  admin: false
+  email: MyString
