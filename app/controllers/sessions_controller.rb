@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if !logged_in?
       @account = Account.new
     else
-      flash[:error] = "You already logged in."
+      flash[:alert] = "You already logged in."
       redirect_to account_path(current_account)
     end
   end

@@ -9,7 +9,7 @@ class StocksController < ApplicationController
             @stock = Stock.new
             render 'new'
         else
-            flash[:error] = "Sorry, you don't have access to it."
+            flash[:alert] = "Sorry, you don't have access to it."
             redirect_to account_path(current_account)
         end
         
@@ -29,7 +29,7 @@ class StocksController < ApplicationController
         if logged_in? && current_account.broker_acc
             @stock = Stock.find_by(id: params[:id])
         else
-            flash[:error] = "Sorry, you don't have access to it."
+            flash[:alert] = "Sorry, you don't have access to it."
             redirect_to stocks_path
         end
     end
