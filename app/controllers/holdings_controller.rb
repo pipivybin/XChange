@@ -14,15 +14,15 @@ class HoldingsController < ApplicationController
                 flash[:alert] = "Sorry. You don't have enough balance"
                 redirect_to stocks_path
             else
+                total = current_account.balance - cost
                 @holding = Holding.create(holding_params)
                 @holding.account = current_account
                 @holding.stock = @stock 
                 @holding.balance = params[:holding][:balance].to_i
-                binding.pry
-                current_account.balance -= cost
+                current_account.update(balance: total)
                 @holding.price = @stock.price
                 @holding.save
-                current_account.save
+                @holding.account
                 flash[:alert] = "You just bought #{@stock.name} stock"
                 redirect_to stocks_path
             end
