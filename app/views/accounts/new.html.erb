@@ -1,4 +1,5 @@
-<%= link_to "log In", login_path %>
+<%= link_to "log In", login_path %><br>
+<%= link_to('Log in with Facebook!', '/auth/facebook') %>
 <br>
 <br>
 <% if @account.errors.any? %>
