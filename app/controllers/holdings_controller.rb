@@ -1,3 +1,5 @@
+require 'pry'
+
 class HoldingsController < ApplicationController
 
     def new
@@ -6,15 +8,24 @@ class HoldingsController < ApplicationController
     def create
         #raise params.inspect
         if logged_in? && params[:holding][:stock_id]
-            @holding = Holding.create(holding_params)
             @stock = Stock.find_by(id: params[:holding][:stock_id])
-            @holding.account = current_account
-            @holding.stock = @stock 
-            @holding.balance = params[:holding][:balance].to_i
-            @holding.price = @stock.price
-            @holding.save
-            flash[:alert] = "You just bought #{@stock.name} stock"
-            redirect_to stocks_path
+            cost = params[:holding][:balance].to_i * @stock.price
+            if current_account.balance < cost
+                flash[:alert] = "Sorry. You don't have enough balance"
+                redirect_to stocks_path
+            else
+                @holding = Holding.create(holding_params)
+                @holding.account = current_account
+                @holding.stock = @stock 
+                @holding.balance = params[:holding][:balance].to_i
+                binding.pry
+                current_account.balance -= cost
+                @holding.price = @stock.price
+                @holding.save
+                current_account.save
+                flash[:alert] = "You just bought #{@stock.name} stock"
+                redirect_to stocks_path
+            end
         else
             redirect_to login_path
         end
