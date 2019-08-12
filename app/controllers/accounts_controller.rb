@@ -27,12 +27,6 @@ class AccountsController < ApplicationController
         end
     end
 
-    def edit
-    end
-
-    def update
-    end
-
     private
 
     def account_params

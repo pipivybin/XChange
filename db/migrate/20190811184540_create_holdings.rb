@@ -5,6 +5,7 @@ class CreateHoldings < ActiveRecord::Migration[5.2]
       t.integer :account_id
       t.integer :stock_id
       t.integer :balance
+      t.integer :price
 
       t.timestamps
     end

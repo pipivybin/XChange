@@ -11,6 +11,7 @@ class HoldingsController < ApplicationController
             @holding.account = current_account
             @holding.stock = @stock 
             @holding.balance += params[:holding][:balance].to_i
+            @holding.save
             flash[:alert] = "You just bought #{@stock.name} stock"
             redirect_to stocks_path
         else
