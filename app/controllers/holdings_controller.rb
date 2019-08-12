@@ -10,7 +10,8 @@ class HoldingsController < ApplicationController
             @stock = Stock.find_by(id: params[:holding][:stock_id])
             @holding.account = current_account
             @holding.stock = @stock 
-            @holding.balance += params[:holding][:balance].to_i
+            @holding.balance = params[:holding][:balance].to_i
+            @holding.price = @stock.price
             @holding.save
             flash[:alert] = "You just bought #{@stock.name} stock"
             redirect_to stocks_path
