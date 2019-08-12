@@ -1,16 +1,6 @@
 <p>Stock Name: <%= @stock.name %></p>
 <p>Stock Price: <%= @stock.price %></p>
-
-<%= form_for @holding do |f| %>
-    <%= f.hidden_field :stock_id, :value => @stock.id %>
-    Purchase Unit: <%= f.text_field :balance %><br>
-    <br>
-    <br>
-    <%= submit_tag "Buy Stock" %>
-   <% end %>
-
-
-
+<%= link_to "Buy Stock",  new_stock_holding_path(@stock) %>
 <br>
 <% if current_account.broker_acc %>
 <%= link_to "Edit Stock", edit_stock_path %>

@@ -1,0 +1,30 @@
+<h4>Stock: <%= @stock.name %></h4>
+
+<br>
+Stock Holding:<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<tbody>
+    <tr>
+      <td><strong>Purchase Price</strong></td>
+      <td><strong>Amount</strong></td>
+      <td><strong>Link</strong></td>
+    </tr>
+<% @holdings.each do |s| %>
+    <tr>
+        <td><%= s.price %></td>
+        <td><%= s.balance %></td>
+        <td><%= link_to "#{@stock.name}", stock_path(@stock) %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+<br>
+<br>
+
+
+<%= link_to "Stock Page", stocks_path %>
