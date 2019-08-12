@@ -1,7 +1,12 @@
 class SessionsController < ApplicationController
   
   def new
-    @account = Account.new
+    if !logged_in?
+      @account = Account.new
+    else
+      flash[:error] = "You already logged in."
+      redirect_to account_path(current_account)
+    end
   end
 
   def create
@@ -15,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :user_id
+    session.delete :acc_id
     redirect_to login_path
   end
 end

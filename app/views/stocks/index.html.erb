@@ -2,7 +2,7 @@
 	<%= flash[:error] %>
 <% end %>
 
-<h1>Stock Selection</h1>
+<h3>Stock Selection</h3>
 
  <table class="table">
   <thead>
@@ -34,12 +34,12 @@
 <br>
 
  <% if current_account %>
-  <p>
+    <p>
     <%= link_to "Back to Account", account_path(current_account) %>
-  </p>
-<% if current_account.broker_acc %>
-  <p>
+    </p>
+    <% if current_account.broker_acc %>
+    <p>
     <%= link_to "Add New Stocks", new_stock_path %>
-  </p>
-<% end %>
+    </p>
+    <% end %>
 <% end %>
