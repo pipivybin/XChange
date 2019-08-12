@@ -1,4 +1,9 @@
 class AccountsController < ApplicationController
+    
+    def index
+        redirect_to login_path
+    end
+
     def new
         if logged_in?
             redirect_to account_path(current_account)
@@ -14,7 +19,6 @@ class AccountsController < ApplicationController
             session[:acc_id] = @account.id
             redirect_to account_path(@account)
         else
-            flash[:alert] = "Please fill in all the information"
             render 'new'
         end
     end
@@ -30,6 +34,6 @@ class AccountsController < ApplicationController
     private
 
     def account_params
-        params.require(:account).permit(:name, :password, :balance, :broker_acc)
+        params.require(:account).permit(:name, :password, :password_confirmation, :balance, :broker_acc)
     end
 end
