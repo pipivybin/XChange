@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_11_184556) do
 
   create_table "holdings", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
+    t.integer "account_id"
     t.integer "stock_id"
     t.integer "balance"
     t.datetime "created_at", null: false
