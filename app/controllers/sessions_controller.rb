@@ -19,8 +19,25 @@ class SessionsController < ApplicationController
      end
   end
 
+  def fbcreate
+    binding.pry
+    @account = Account.find_or_create_by(uid: auth['uid']) do |u|
+      u.name = auth['info']['name']
+    end
+    
+    session[:acc_id] = @account.id
+    redirect_to account_path(@account)
+  end
+
   def destroy
     session.delete :acc_id
     redirect_to login_path
   end
+
+  private
+ 
+  def auth
+    request.env['omniauth.auth']
+  end
+
 end

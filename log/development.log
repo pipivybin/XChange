@@ -11290,3 +11290,111 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 80ms (Views: 49.3ms | ActiveRecord: 2.7ms)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddUidToAccounts (20190811184559)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddUidToAccounts (20190811184559)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "accounts" ADD "uid" varchar[0m
+  ↳ db/migrate/20190811184559_add_uid_to_accounts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811184559"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-08-12 16:51:29 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mfduan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 596ms (Views: 555.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-08-12 16:51:34 -0400
+Started GET "/auth/facebook" for ::1 at 2019-08-12 16:51:34 -0400
+Started GET "/auth/facebook/callback?code=AQDjGZP6-K896px0tjkbOeAszl7KSubMS0L8wqNzaRFxEZFZo-OG1vtfS--em18mneP38wrzvi6kKOb-IxQLvE0ut3aN2f5ui1SHWO2SRT-V5szAd6uIcNjG4p64yPGgUsQWspanIsg1zG_2lE1upBbe09YY6-xx5bmmaiKoVRtePVFRPiZW9NhBzG6eyJJlW2msKhYuq5Mf7toKYUaTvxks6NyiZ7S9bvAztjc3Yz-0Z6hiNCc_NrRRzddk09URKxK_7blkgdYWmUPcvYdpBz5F2Bwa1CZ6mTVTCrqFfUnemQDXZvW7zuN_Rw9iBSwCbz0&state=80b380bebd5e35280138a71468b79fbb4ee6584d13724b9b" for ::1 at 2019-08-12 16:51:42 -0400
+Processing by SessionsController#fbcreate as HTML
+  Parameters: {"code"=>"AQDjGZP6-K896px0tjkbOeAszl7KSubMS0L8wqNzaRFxEZFZo-OG1vtfS--em18mneP38wrzvi6kKOb-IxQLvE0ut3aN2f5ui1SHWO2SRT-V5szAd6uIcNjG4p64yPGgUsQWspanIsg1zG_2lE1upBbe09YY6-xx5bmmaiKoVRtePVFRPiZW9NhBzG6eyJJlW2msKhYuq5Mf7toKYUaTvxks6NyiZ7S9bvAztjc3Yz-0Z6hiNCc_NrRRzddk09URKxK_7blkgdYWmUPcvYdpBz5F2Bwa1CZ6mTVTCrqFfUnemQDXZvW7zuN_Rw9iBSwCbz0", "state"=>"80b380bebd5e35280138a71468b79fbb4ee6584d13724b9b"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."uid" = ? LIMIT ?[0m  [["uid", "10220418271427236"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:23
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "Mingfang Duan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:23
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"accounts", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/sessions_controller.rb:27:in `fbcreate'
+Started GET "/auth/facebook/callback?code=AQDSeZRYKdHaBG7kUWCTwUGKt5uJg91hQxbrMWLDE5AAQW9TzZwWSYLGHDHdEF46WjLzgLbiCuojabcUBURFXOd7GHaD0IkiTlwe9O_R4hf91cQ7KY5ainiqrh2ylaz41kQK02-Pld0yLd4MflxEd9PfsPv_crIX7QU_oDSEasfHSdSRMMjfZN2bLezC_oXn1nbK74B-1OAfOnxZfGICUTLDXKqYN8wFOlEEBRFB7NEzfWANeIvZgKGeuKAUfIndKFDUHsuKriEvund842ympT3w_P9R04aMbv9PzgLbRUdgPV-OjHLxTju-guDj_VdSvsc&state=80b380bebd5e35280138a71468b79fbb4ee6584d13724b9b" for ::1 at 2019-08-12 16:52:28 -0400
+Processing by SessionsController#fbcreate as HTML
+  Parameters: {"code"=>"AQDSeZRYKdHaBG7kUWCTwUGKt5uJg91hQxbrMWLDE5AAQW9TzZwWSYLGHDHdEF46WjLzgLbiCuojabcUBURFXOd7GHaD0IkiTlwe9O_R4hf91cQ7KY5ainiqrh2ylaz41kQK02-Pld0yLd4MflxEd9PfsPv_crIX7QU_oDSEasfHSdSRMMjfZN2bLezC_oXn1nbK74B-1OAfOnxZfGICUTLDXKqYN8wFOlEEBRFB7NEzfWANeIvZgKGeuKAUfIndKFDUHsuKriEvund842ympT3w_P9R04aMbv9PzgLbRUdgPV-OjHLxTju-guDj_VdSvsc", "state"=>"80b380bebd5e35280138a71468b79fbb4ee6584d13724b9b"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."uid" = ? LIMIT ?[0m  [["uid", "10220418271427236"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:23
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "Mingfang Duan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/sessions_controller.rb:23
+Started GET "/" for ::1 at 2019-08-12 16:52:30 -0400
+Completed 500 Internal Server Error in 88230ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"accounts", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/sessions_controller.rb:28:in `fbcreate'
+Started GET "/" for ::1 at 2019-08-12 16:53:56 -0400
+Processing by SessionsController#new as HTML
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 177ms (Views: 145.7ms | ActiveRecord: 0.3ms)
+
+
+Completed 200 OK in 188ms (Views: 153.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-08-12 16:55:33 -0400
+Started GET "/auth/facebook" for ::1 at 2019-08-12 16:55:33 -0400
+Started GET "/auth/facebook/callback?code=AQD6Eh5CvLhSczqpYYJ5DOE8KGJOEwb8N1DmpdeOgSKA2P6v9imEcln17wCvXR-u_0fKQZFRlki4OuVKYsEdi-SbF4AVAl3pidS_IGU4EuJZzQJi9J18JwyHbyJjPN07sO99AyKN32QB7mwx42nVoHNQffDq_Dxjq7uSVJYzyaDh9ooW2djLPMX2HpvL0_fIUUtDGE2UimKK1fUMI2HXc5TeHDqYkCnQ_ACAM7ioeTM0iBsXBX-grioYTFnKw18vi5g4YIlSxz0tSuxmUQZa8ubytu7skK4deTTBiBDcdKX1PUNhQCZXS-x7zFyUhHNBsAQ&state=372622c57bf787f7361dd228f5a38f445aba88f0f3b19eaa" for ::1 at 2019-08-12 16:55:33 -0400
+Processing by SessionsController#fbcreate as HTML
+  Parameters: {"code"=>"AQD6Eh5CvLhSczqpYYJ5DOE8KGJOEwb8N1DmpdeOgSKA2P6v9imEcln17wCvXR-u_0fKQZFRlki4OuVKYsEdi-SbF4AVAl3pidS_IGU4EuJZzQJi9J18JwyHbyJjPN07sO99AyKN32QB7mwx42nVoHNQffDq_Dxjq7uSVJYzyaDh9ooW2djLPMX2HpvL0_fIUUtDGE2UimKK1fUMI2HXc5TeHDqYkCnQ_ACAM7ioeTM0iBsXBX-grioYTFnKw18vi5g4YIlSxz0tSuxmUQZa8ubytu7skK4deTTBiBDcdKX1PUNhQCZXS-x7zFyUhHNBsAQ", "state"=>"372622c57bf787f7361dd228f5a38f445aba88f0f3b19eaa"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."uid" = ? LIMIT ?[0m  [["uid", "1028"], ["LIMIT", 1]]
+  ↳ (pry):3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):3
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (pry):3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (pry):3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):4
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (pry):4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (pry):4
