@@ -2,9 +2,7 @@
 <p>Stock Price: <%= @stock.price %></p>
 
 <%= form_for @holding do |f| %>
-    <% f.hidden_field :account_id, value: current_account.id %>
-    <% f.hidden_field :stock_id, value: @stock.id %>
-
+    <%= f.hidden_field :stock_id, :value => @stock.id %>
     Purchase Unit: <%= f.text_field :balance %><br>
     <br>
     <br>

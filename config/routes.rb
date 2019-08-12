@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   get 'signup', to: 'accounts#new'
   get 'logout', to: 'sessions#destroy'
 
-  resources :stocks
-  resources :holdings
+  resources :accounts
   
-  resources :accounts do
+  resources :stocks do
     resources :holdings
   end
+
+  resources :holdings
 
 
 end

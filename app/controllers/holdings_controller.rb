@@ -1,14 +1,21 @@
 class HoldingsController < ApplicationController
 
+    def new
+    end
+
     def create
-        @holding = Holding.create(holding_params)
-        @stock = Stock.find_by(id: params[:id])
-        @holding.account = current_account
-        @holding.stock = @stock 
-        #raise params[:holding][:balance].inspect
-        @holding.balance += params[:holding][:balance].to_i
-        flash[:alert] = "You just bought #{@stock.name}"
-        redirect_to stocks_path
+        #raise params.inspect
+        if logged_in? && params[:holding][:stock_id]
+            @holding = Holding.create(holding_params)
+            @stock = Stock.find_by(id: params[:holding][:stock_id])
+            @holding.account = current_account
+            @holding.stock = @stock 
+            @holding.balance += params[:holding][:balance].to_i
+            flash[:alert] = "You just bought #{@stock.name} stock"
+            redirect_to stocks_path
+        else
+            redirect_to login_path
+        end
     end
 
     private

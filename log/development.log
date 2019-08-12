@@ -4523,3 +4523,895 @@ Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.7ms)
 RuntimeError ("5"):
   
 app/controllers/holdings_controller.rb:8:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 10:45:34 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jMyGuu7O98noejMWmKUluX5OAZZ2JhNebWGbHMi9HzPuYVaUIolEtTFdxcFMKfyFzl5Yzdu2YUauJa9UQu4Arw==", "holding"=>{"balance"=>"5"}, "commit"=>"Buy Stock"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/holdings_controller.rb:4
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:5
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 2.4ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/holdings_controller.rb:10:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 10:46:15 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jMyGuu7O98noejMWmKUluX5OAZZ2JhNebWGbHMi9HzPuYVaUIolEtTFdxcFMKfyFzl5Yzdu2YUauJa9UQu4Arw==", "holding"=>{"balance"=>"5"}, "commit"=>"Buy Stock"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/holdings_controller.rb:4
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:5
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 3.6ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/holdings_controller.rb:10:in `create'
+Started GET "/stocks/1" for ::1 at 2019-08-12 10:47:20 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 94ms (Views: 67.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 10:47:24 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WhY3fPR3MAuB0Ak61LBW+fXqjBX1HdE5zM2a7vR9GFY4u+dSODCDd1j3/+0API/FRfrVTliNoyEPia6mfi4Hyg==", "holding"=>{"balance"=>"5"}, "commit"=>"Buy Stock"}
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/holdings_controller.rb:4
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:5
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/holdings_controller.rb:10:in `create'
+Started GET "/stocks/1" for ::1 at 2019-08-12 10:48:00 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 67ms (Views: 42.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 10:48:02 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bzNV/Gr7+5gj7ck+MeYV5mzslp3GxFuqo0zDKlMOGg4NnoXSprxI5PrKP+nlasza3PzPxmtUKbJgCPdi2V0Fkg==", "holding"=>{"balance"=>""}, "commit"=>"Buy Stock"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/holdings_controller.rb:4
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:5
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+RuntimeError (nil):
+  
+app/controllers/holdings_controller.rb:6:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 10:48:20 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bzNV/Gr7+5gj7ck+MeYV5mzslp3GxFuqo0zDKlMOGg4NnoXSprxI5PrKP+nlasza3PzPxmtUKbJgCPdi2V0Fkg==", "holding"=>{"balance"=>"1"}, "commit"=>"Buy Stock"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/holdings_controller.rb:4
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:5
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.1ms)
+
+
+  
+RuntimeError (nil):
+  
+app/controllers/holdings_controller.rb:6:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 10:51:00 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bzNV/Gr7+5gj7ck+MeYV5mzslp3GxFuqo0zDKlMOGg4NnoXSprxI5PrKP+nlasza3PzPxmtUKbJgCPdi2V0Fkg==", "holding"=>{"balance"=>"1"}, "commit"=>"Buy Stock"}
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/login
+Completed 302 Found in 17ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for ::1 at 2019-08-12 10:51:00 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `account_path' for #<SessionsController:0x00007ff51004bca0>):
+  
+app/controllers/sessions_controller.rb:8:in `new'
+Started POST "/holdings" for ::1 at 2019-08-12 10:52:38 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bzNV/Gr7+5gj7ck+MeYV5mzslp3GxFuqo0zDKlMOGg4NnoXSprxI5PrKP+nlasza3PzPxmtUKbJgCPdi2V0Fkg==", "holding"=>{"balance"=>"1"}, "commit"=>"Buy Stock"}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/login
+Completed 302 Found in 26ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/login" for ::1 at 2019-08-12 10:52:38 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/accounts/4
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/4" for ::1 at 2019-08-12 10:52:38 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 78ms (Views: 71.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks/1" for ::1 at 2019-08-12 10:53:21 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 118ms (Views: 47.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 10:53:25 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GynkOgW74j7VaFNhKRlnrLTK6ld0kLZoXAX9aVVjPBV5hDQUyfxRQgxPpbb9lb6QBNqzDNkAxHCfQckh3zAjiQ==", "holding"=>{"balance"=>"5"}, "commit"=>"Buy Stock"}
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2019-08-12 10:53:25 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/accounts/4
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/4" for ::1 at 2019-08-12 10:53:25 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 73ms (Views: 68.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stocks/1" for ::1 at 2019-08-12 10:54:05 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mfduan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 456ms (Views: 413.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 10:54:09 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rmWctMUcHhT8bw1vRh6l0pTDnc2rUeuBYnuBwLhpUHXMyEyaCVutaCVI+7iSknzuJNPElgbBmZmhP7WIMjpP6Q==", "holding"=>{"balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (nil):
+  
+app/controllers/holdings_controller.rb:4:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 10:54:38 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mfduan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rmWctMUcHhT8bw1vRh6l0pTDnc2rUeuBYnuBwLhpUHXMyEyaCVutaCVI+7iSknzuJNPElgbBmZmhP7WIMjpP6Q==", "holding"=>{"balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (nil):
+  
+app/controllers/holdings_controller.rb:4:in `create'
+Started GET "/stocks/1" for ::1 at 2019-08-12 10:54:44 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 437ms (Views: 393.4ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 10:54:49 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0LhScHpnpsbLKvBSVhWhmiNyMWMgnB/Z/vdlw02AkT2yFYJetiAVuhINBoWCmXimk2JoOI0MbcE9s1GLx9OOoQ==", "holding"=>{"balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (nil):
+  
+app/controllers/holdings_controller.rb:4:in `create'
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:00:50 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mfduan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (1.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (1.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 444ms (Views: 391.2ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 11:00:53 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"480eaEhwqMtJgloJIKK7NEg38pMlnmsWyNqy612OsNOBYM5GhDcbt5ClrN70LmII+CeryIgOGQ4Lnoaj192vTw==", "holding"=>{"stock_id"=>"", "balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (nil):
+  
+app/controllers/holdings_controller.rb:4:in `create'
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:04:57 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"holdings", :id=>"1"}, missing required keys: [:stock_id]):
+    1: <p>Stock Name: <%= @stock.name %></p>
+    2: <p>Stock Price: <%= @stock.price %></p>
+    3: 
+    4: <%= form_for @holding, url: new_stock_holding_path do |f| %>
+    5:     <%= f.hidden_field :stock_id %>
+    6: 
+    7:     Purchase Unit: <%= f.text_field :balance %><br>
+  
+app/views/stocks/show.html.erb:4:in `_app_views_stocks_show_html_erb__1504831901773635661_70163841549440'
+Started GET "/holdings" for ::1 at 2019-08-12 11:06:06 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for HoldingsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:06:14 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 71ms (Views: 66.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/stocks/1/holdings/new" for ::1 at 2019-08-12 11:06:19 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/stocks/1/holdings/new"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stocks/1/holdings/new" for ::1 at 2019-08-12 11:06:59 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/stocks/1/holdings/new"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:07:14 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 76ms (Views: 39.1ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/stocks/1/holdings/new" for ::1 at 2019-08-12 11:07:18 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/stocks/1/holdings/new"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:07:47 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 144ms (Views: 105.7ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/stocks/1/holdings/new" for ::1 at 2019-08-12 11:07:50 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/stocks/1/holdings/new"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stocks/1/holdings/new" for ::1 at 2019-08-12 11:09:33 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/stocks/1/holdings/new"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:11:49 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 90ms (Views: 64.1ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 11:11:52 -0400
+  
+SyntaxError (/Users/mfduan/Development/xchange/app/controllers/holdings_controller.rb:26: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/holdings_controller.rb:26: syntax error, unexpected end, expecting end-of-input
+Started GET "/routes" for ::1 at 2019-08-12 11:12:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:15:16 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 78ms (Views: 50.4ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 11:15:19 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1c0E4VlIgp+ZpyBbIU2/nrd4jaoPsu/IRsdxkdmysqK3YNTPlQ8x40CA1oz1wWaiB2jU8aIindCFg0XZU+GtPg==", "holding"=>{"stock_id"=>"", "balance"=>"5"}, "commit"=>"Buy Stock"}
+No template found for HoldingsController#create, rendering head :no_content
+Completed 204 No Content in 60ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/stocks" for ::1 at 2019-08-12 11:15:43 -0400
+Processing by StocksController#index as HTML
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:21
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/index.html.erb within layouts/application (66.7ms)
+Completed 200 OK in 109ms (Views: 61.5ms | ActiveRecord: 37.8ms)
+
+
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:15:45 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 89ms (Views: 64.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 11:15:48 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WPm+hhqLb/bSI3/jkiUd2lLhM+m2wVJghwiqVFF2ALwxM5EHsZRjAOfFMWW7tUc0dAow7NK7r1brp8OdVo3WIA==", "holding"=>{"stock_id"=>"", "balance"=>"5"}, "commit"=>"Buy Stock"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2019-08-12 11:15:48 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/accounts/4
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts/4" for ::1 at 2019-08-12 11:15:48 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 57ms (Views: 50.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 11:19:54 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jDT3EwGL7xKUb9DzrGMiM3EKiBXOrPOLV59BdznfdOfumSc9zcxcbk1IJiR47/sPwRrRTmM8gZOU23U/s4xrew==", "holding"=>{"stock_id"=>"", "balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (nil):
+  
+app/controllers/holdings_controller.rb:7:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 11:20:14 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jDT3EwGL7xKUb9DzrGMiM3EKiBXOrPOLV59BdznfdOfumSc9zcxcbk1IJiR47/sPwRrRTmM8gZOU23U/s4xrew==", "holding"=>{"stock_id"=>"", "balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"jDT3EwGL7xKUb9DzrGMiM3EKiBXOrPOLV59BdznfdOfumSc9zcxcbk1IJiR47/sPwRrRTmM8gZOU23U/s4xrew==", "holding"=>{"stock_id"=>"", "balance"=>"5"}, "commit"=>"Buy Stock", "controller"=>"holdings", "action"=>"create"} permitted: false>):
+  
+app/controllers/holdings_controller.rb:7:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 11:22:08 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jDT3EwGL7xKUb9DzrGMiM3EKiBXOrPOLV59BdznfdOfumSc9zcxcbk1IJiR47/sPwRrRTmM8gZOU23U/s4xrew==", "holding"=>{"stock_id"=>"", "balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"jDT3EwGL7xKUb9DzrGMiM3EKiBXOrPOLV59BdznfdOfumSc9zcxcbk1IJiR47/sPwRrRTmM8gZOU23U/s4xrew==", "holding"=>{"stock_id"=>"", "balance"=>"5"}, "commit"=>"Buy Stock", "controller"=>"holdings", "action"=>"create"} permitted: false>):
+  
+app/controllers/holdings_controller.rb:7:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 11:22:12 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jDT3EwGL7xKUb9DzrGMiM3EKiBXOrPOLV59BdznfdOfumSc9zcxcbk1IJiR47/sPwRrRTmM8gZOU23U/s4xrew==", "holding"=>{"stock_id"=>"", "balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"jDT3EwGL7xKUb9DzrGMiM3EKiBXOrPOLV59BdznfdOfumSc9zcxcbk1IJiR47/sPwRrRTmM8gZOU23U/s4xrew==", "holding"=>{"stock_id"=>"", "balance"=>"5"}, "commit"=>"Buy Stock", "controller"=>"holdings", "action"=>"create"} permitted: false>):
+  
+app/controllers/holdings_controller.rb:7:in `create'
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:23:27 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 96ms (Views: 59.6ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 11:23:29 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qkkqGbF7kWHV9JpunpEtwnB+kXWF0aAj8vvLg8BjfSrI5Po3fTwiHQzTbLlKHfT+wG7ILihB0jsxv//LSjBitg==", "holding"=>{"stock_id"=>"1", "balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"qkkqGbF7kWHV9JpunpEtwnB+kXWF0aAj8vvLg8BjfSrI5Po3fTwiHQzTbLlKHfT+wG7ILihB0jsxv//LSjBitg==", "holding"=>{"stock_id"=>"1", "balance"=>"5"}, "commit"=>"Buy Stock", "controller"=>"holdings", "action"=>"create"} permitted: false>):
+  
+app/controllers/holdings_controller.rb:7:in `create'
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:25:11 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 65ms (Views: 61.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stocks/1" for ::1 at 2019-08-12 11:26:21 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:24
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 11:26:24 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WRHRN1fJgkv3RDMlnWZh4/9lmK2haAlxnrIKmfi0Ns87vAEZm44xNy5jxfJJ6rjfT3XB9gz4e2ld9j7RcucpUw==", "holding"=>{"stock_id"=>"1", "balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"WRHRN1fJgkv3RDMlnWZh4/9lmK2haAlxnrIKmfi0Ns87vAEZm44xNy5jxfJJ6rjfT3XB9gz4e2ld9j7RcucpUw==", "holding"=>{"stock_id"=>"1", "balance"=>"5"}, "commit"=>"Buy Stock", "controller"=>"holdings", "action"=>"create"} permitted: false>):
+  
+app/controllers/holdings_controller.rb:7:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 11:28:40 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WRHRN1fJgkv3RDMlnWZh4/9lmK2haAlxnrIKmfi0Ns87vAEZm44xNy5jxfJJ6rjfT3XB9gz4e2ld9j7RcucpUw==", "holding"=>{"stock_id"=>"1", "balance"=>"5"}, "commit"=>"Buy Stock"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"WRHRN1fJgkv3RDMlnWZh4/9lmK2haAlxnrIKmfi0Ns87vAEZm44xNy5jxfJJ6rjfT3XB9gz4e2ld9j7RcucpUw==", "holding"=>{"stock_id"=>"1", "balance"=>"5"}, "commit"=>"Buy Stock", "controller"=>"holdings", "action"=>"create"} permitted: false>):
+  
+app/controllers/holdings_controller.rb:7:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 11:29:01 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WRHRN1fJgkv3RDMlnWZh4/9lmK2haAlxnrIKmfi0Ns87vAEZm44xNy5jxfJJ6rjfT3XB9gz4e2ld9j7RcucpUw==", "holding"=>{"stock_id"=>"1", "balance"=>"5"}, "commit"=>"Buy Stock"}
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/login
+Completed 302 Found in 14ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for ::1 at 2019-08-12 11:29:01 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/accounts/4
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/4" for ::1 at 2019-08-12 11:29:01 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 129ms (Views: 122.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-12 11:29:15 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WRHRN1fJgkv3RDMlnWZh4/9lmK2haAlxnrIKmfi0Ns87vAEZm44xNy5jxfJJ6rjfT3XB9gz4e2ld9j7RcucpUw==", "holding"=>{"stock_id"=>"1", "balance"=>"5"}, "commit"=>"Buy Stock"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:9
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/holdings_controller.rb:9
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:10
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/holdings_controller.rb:14:in `create'
+Started POST "/holdings" for ::1 at 2019-08-12 11:29:39 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WRHRN1fJgkv3RDMlnWZh4/9lmK2haAlxnrIKmfi0Ns87vAEZm44xNy5jxfJJ6rjfT3XB9gz4e2ld9j7RcucpUw==", "holding"=>{"stock_id"=>"1", "balance"=>"5"}, "commit"=>"Buy Stock"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:9
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/holdings_controller.rb:9
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:10
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/stocks
+Completed 302 Found in 61ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/stocks" for ::1 at 2019-08-12 11:29:39 -0400
+Processing by StocksController#index as HTML
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:21
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 87ms (Views: 83.1ms | ActiveRecord: 0.7ms)
+
+
