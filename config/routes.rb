@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'sessions/new'
+  root 'sessions#new'
 
   get 'login', to: 'sessions#new'
   get 'signup', to: 'accounts#new'
@@ -7,5 +7,10 @@ Rails.application.routes.draw do
 
   resources :stocks
   resources :holdings
-  resources :accounts
+  
+  resources :accounts do
+    resources :holdings
+  end
+
+
 end

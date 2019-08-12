@@ -1,8 +1,18 @@
 <p>Stock Name: <%= @stock.name %></p>
 <p>Stock Price: <%= @stock.price %></p>
 
+<%= form_for @holding do %>
+    Purchase Unit: <%= text_field_tag :unit %><br>
+    <br>
+    <br>
+    <%= submit_tag "Buy Stock" %>
+   <% end %>
+
+
+
+<br>
 <% if current_account.broker_acc %>
 <%= link_to "Edit Stock", edit_stock_path %>
 <%end%>
-
-<%= link_to "Stock Selection", stocks_path %>
+<br>
+<%= link_to "Back to Stock Selection", stocks_path %>

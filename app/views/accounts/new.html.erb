@@ -1,7 +1,9 @@
 <% if flash[:error] %>
 	<%= flash[:error] %>
 <% end %>
-
+<%= link_to "log In", login_path %>
+<br>
+<br>
 <%= form_for @account do |f| %>
     Username: <%= f.text_field :name %><br>
     Password: <%= f.password_field :password %><br>
@@ -12,4 +14,4 @@
     <%= f.submit "Create Account" %>
    <% end %>
    
-   <%= link_to "log In", login_path %>
+   

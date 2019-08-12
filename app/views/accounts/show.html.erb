@@ -4,6 +4,10 @@
 
 <p>Name: <%= @account.name %></p>
 <p>Balance: <%= @account.balance %></p>
+<% if @account.broker_acc %>
+<p>Broker Account: <%= "Yes" %></p>
+<% end %>
+
 <link_to "Edit Information" edit_account_path>
 
 

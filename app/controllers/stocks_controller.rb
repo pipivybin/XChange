@@ -22,6 +22,7 @@ class StocksController < ApplicationController
 
     def show
         @stock = Stock.find_by(id: params[:id])
+        @holding = Holding.new
     end
 
     def edit

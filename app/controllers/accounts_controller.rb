@@ -1,6 +1,10 @@
 class AccountsController < ApplicationController
     def new
+        if logged_in?
+            redirect_to account_path(current_account)
+        else
         @account = Account.new
+        end
     end
     
     def create

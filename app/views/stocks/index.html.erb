@@ -34,12 +34,12 @@
 <br>
 
  <% if current_account %>
-    <p>
-    <%= link_to "Back to Account", account_path(current_account) %>
-    </p>
     <% if current_account.broker_acc %>
     <p>
     <%= link_to "Add New Stocks", new_stock_path %>
     </p>
     <% end %>
+    <p>
+    <%= link_to "Back to Account", account_path(current_account) %>
+    </p>
 <% end %>
