@@ -18188,3 +18188,343 @@ Processing by AccountsController#show as HTML
 Completed 200 OK in 84ms (Views: 78.9ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for ::1 at 2019-08-13 18:03:02 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mfduan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 1315ms (Views: 1270.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:03:07 -0400
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:03:07 -0400
+Started GET "/auth/facebook/callback?code=AQDnbQNlHt5d5n2CPyKvYJItXP7_wlUea_aEJj_AYsNyFvZAH9aXOaIIUe7B1hUNQbdEvltN5EPMbcdrSVWzfx9VoNW2T1UOq0Gkf17a_fPnUDf19Yg6tg5q86Evvnxt44wgK4R5FOs1DZFeEq6RYZh0mvJAGgn0UewU-_ObNQ7QMpHc5CFElRjmsdwEStCJ08HtZNQBZ2D4VD91TCkyyrXh2WQsocS5MGVgI_2Rii69tj1VQyhxeOTBYG5MSWgK0uAD3VgnWJxaWQcfVpYtO2jgAX7vhmuAhr7WG5eHeKcmQUMwn3dmzIGjm-SMzbNqarw" for ::1 at 2019-08-13 18:03:08 -0400
+  
+OAuth2::Error (: 
+{"access_token":"EAAd5oJRJnBABAC5sBDizd3G1eTFvZA9qhKpLqZAtM8CCW3UtJ8TywexkTKdpjqV75zSVixLeoc1CyTAa1nM1TJhmN2Qdm6SbW2NnLnbZB8XmBoTfYTlKKE7CQt1dfJOtaAoHPsZCZBlZC65vbPb7GA72UaZCsDvZCbcVAKG7swPHGwZDZD","token_type":"bearer","expires_in":5184000}):
+  
+oauth2 (0.6.1) lib/oauth2/client.rb:132:in `get_token'
+oauth2 (0.6.1) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:87:in `build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `block in build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:166:in `with_authorization_code!'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `build_access_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:62:in `callback_phase'
+omniauth (1.9.0) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:09:30 -0400
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:09:30 -0400
+Started GET "/auth/facebook/callback?code=AQDE_-CZlT7AgvqprtWZ0T8MYGgPpkNisVyu3D_qcEepdnBk3Gb6viVw-uKjw6xs-S-5PIRaV-uuS2I-qhLMQDMXdjpZ0IbbN7bqoSNypKFtX3XpLhvcStpVwlMcz4Jktm5NJOfE5ADcu8v2kpTa-utULvwkDkGA1xJGMNxemwgu1VkMjmZVYmgzB9HDw2zd_Vjo4Vqy-ZQMb6PaEBRrOICB51PTCuLnOppODVabNNd0A5hdkFvw-qgD0eQV62h5AzOV_kznlcii2rbXbbRpeywXb-xRZB0kAUa2K8YVHYmAFoTrfIJeV2Z63td_oPe9RGA" for ::1 at 2019-08-13 18:09:30 -0400
+  
+OAuth2::Error (: 
+{"access_token":"EAAd5oJRJnBABACqyESCmGPkv28NVZARJUPyWf9GJV3DdraWLKdaN7DDKWaZAqDKobe4R6ZA62xWDGX59rrH91cnjJSZC8fmy2iMnChte4d0HG6YcLof3GCMBZAZB79sJVTCZBergso1lFeizv3NzwrZCwvixKXYmaIV2ZCs2qExCMZCwZDZD","token_type":"bearer","expires_in":5183618}):
+  
+oauth2 (0.6.1) lib/oauth2/client.rb:132:in `get_token'
+oauth2 (0.6.1) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:87:in `build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `block in build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:166:in `with_authorization_code!'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `build_access_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:62:in `callback_phase'
+omniauth (1.9.0) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-08-13 18:09:51 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (1.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 90ms (Views: 53.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:09:53 -0400
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:09:53 -0400
+Started GET "/auth/facebook/callback?code=AQDqJLaPEQ6hna4rBodWwTEFLz1IjjqezAg87mbRlRSULNCQEuY-sPw12dfucxn4xQBmb0O4PK4PU1ncE4fQQVOVJYFaCbz6I9KiiqNzVlP5gE8h3YVvYxMBmbtVYxh5zkm9p4CwEVHKa0NQ8azunV52qjc94IALCMS9yMEOT35WOtMFV3w2ghtvz1nZNMLtLEKqeWGm7NGrUk9vJEPzyxI3RlYOh22ONb9e2vEbdhym7Mp7NTGN2auNu6YCH_YTYrhQPD4ohdLOn1HRR0XrDrN85j3CTwd16eP877p97pImSL7gvm7SpLrbexlbbilIlh0" for ::1 at 2019-08-13 18:09:53 -0400
+  
+OAuth2::Error (: 
+{"access_token":"EAAd5oJRJnBABANWSZAu5mdSeoeKQf94hlaZCkluZBordtZCd7Ag9iBlvkvcaespSlAb5oTwYvvT2olNgzPDcwd6Wkg781i7pDC8DW3jCJLXZCxGrhtrTSJ8hASg5PAyCnOdZCiU1vMCJ7BH8wWZBwX0rDTqvUGNK0EkECLx2ckmYQZDZD","token_type":"bearer","expires_in":5183595}):
+  
+oauth2 (0.6.1) lib/oauth2/client.rb:132:in `get_token'
+oauth2 (0.6.1) lib/oauth2/strategy/auth_code.rb:29:in `get_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:87:in `build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `block in build_access_token'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:166:in `with_authorization_code!'
+omniauth-facebook (1.4.0) lib/omniauth/strategies/facebook.rb:73:in `build_access_token'
+omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:62:in `callback_phase'
+omniauth (1.9.0) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:16:38 -0400
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mfduan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:16:38 -0400
+Started GET "/auth/facebook/callback?code=AQCtNxVQ7CA2wFbOOF94j1HiAp15YaXZVQMk8PSD2I5YNsQZ0VvIklKLUJSNMwTZkV-SwuDbE_ap-SaN42PbdhhvrjSqw9BC7en0qqfzFsirDwOaHzd66abeYsy6Wf2t_CDOXfNhtgBmVmyS3NEj5diMBwpUnMlHQzli6L5Ja_1_9YXf3UeC3F5hm3r28SKfIaRS9bDhAHaf98IiKtniG2E3OGcySml_p4pCUkTZWKwa1k-iIsWnqOj48zk248iOVmp3wdRQ4MvEMMpsH41OudaGE4fM9QEUpik_3ZPDi-Lz9q7dWRfOIjZ5u8_5zSsoo68&state=c58c5d5e8bacea23dd21bb8ce0c30bd3600650aaea547847" for ::1 at 2019-08-13 18:16:38 -0400
+Processing by SessionsController#fbcreate as HTML
+  Parameters: {"code"=>"AQCtNxVQ7CA2wFbOOF94j1HiAp15YaXZVQMk8PSD2I5YNsQZ0VvIklKLUJSNMwTZkV-SwuDbE_ap-SaN42PbdhhvrjSqw9BC7en0qqfzFsirDwOaHzd66abeYsy6Wf2t_CDOXfNhtgBmVmyS3NEj5diMBwpUnMlHQzli6L5Ja_1_9YXf3UeC3F5hm3r28SKfIaRS9bDhAHaf98IiKtniG2E3OGcySml_p4pCUkTZWKwa1k-iIsWnqOj48zk248iOVmp3wdRQ4MvEMMpsH41OudaGE4fM9QEUpik_3ZPDi-Lz9q7dWRfOIjZ5u8_5zSsoo68", "state"=>"c58c5d5e8bacea23dd21bb8ce0c30bd3600650aaea547847"}
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."provider" = ? AND "accounts"."uid" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "10220418271427236"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/account.rb:20
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "Mingfang Duan"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:20
+  [1m[36mAccount Create (1.9ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "password_digest", "created_at", "updated_at", "uid", "provider") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Mingfang Duan"], ["password_digest", "$2a$12$JCYfFBtLWCBHkzmMF2f0kuLm5WcG8cnCKiHabt/8o07pIk6vBVBge"], ["created_at", "2019-08-13 22:16:39.484270"], ["updated_at", "2019-08-13 22:16:39.484270"], ["uid", "10220418271427236"], ["provider", "facebook"]]
+  ↳ app/models/account.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/account.rb:20
+Redirected to http://localhost:3000/accounts/9
+Completed 302 Found in 344ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/accounts/9" for ::1 at 2019-08-13 18:16:39 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  [1m[36mHolding Load (0.2ms)[0m  [1m[34mSELECT "holdings".* FROM "holdings" WHERE "holdings"."account_id" = ?[0m  [["account_id", 9]]
+  ↳ app/views/accounts/show.html.erb:25
+  Rendered accounts/show.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 398ms (Views: 392.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/logout" for ::1 at 2019-08-13 18:16:58 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-13 18:16:58 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 59ms (Views: 54.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:17:26 -0400
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:17:26 -0400
+Started GET "/auth/facebook/callback?code=AQBKbTKwuV7CaC0T6n5322w6zI_Td5FxPpdIzDlItEHADZzE5BxV9EyFAqIFZ-hbuXiXxnn0p96XVdS9JWEo3L59J5xfC6HVcBj2LsvAQdbNRI0XCubaHW6rs1E0er9Mc1WeE7lgZLc4EG3vjxfvKMJAs0jEifATUUAMnPRKbXdLhfKMQ8_YAcmUsFIAwMmbDNUblpRXflXb3a2-MLvjV-OspWVPMgaJ-bqde_Ta6B0eVWhyoaMFi7Y0AoSiwDoklo-d9PXVokwBfrlKg5t4AJjAf-7Y_w6hq1SOQneCwV5ZJchTupbAw3SoOw9vHTXk_g4&state=464a5c51b713e2242676a0844f9d76a2bea58a1fbfe4b9bf" for ::1 at 2019-08-13 18:17:47 -0400
+Processing by SessionsController#fbcreate as HTML
+  Parameters: {"code"=>"AQBKbTKwuV7CaC0T6n5322w6zI_Td5FxPpdIzDlItEHADZzE5BxV9EyFAqIFZ-hbuXiXxnn0p96XVdS9JWEo3L59J5xfC6HVcBj2LsvAQdbNRI0XCubaHW6rs1E0er9Mc1WeE7lgZLc4EG3vjxfvKMJAs0jEifATUUAMnPRKbXdLhfKMQ8_YAcmUsFIAwMmbDNUblpRXflXb3a2-MLvjV-OspWVPMgaJ-bqde_Ta6B0eVWhyoaMFi7Y0AoSiwDoklo-d9PXVokwBfrlKg5t4AJjAf-7Y_w6hq1SOQneCwV5ZJchTupbAw3SoOw9vHTXk_g4", "state"=>"464a5c51b713e2242676a0844f9d76a2bea58a1fbfe4b9bf"}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."provider" = ? AND "accounts"."uid" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "10220418271427236"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/account.rb:20
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? AND "accounts"."id" != ? LIMIT ?[0m  [["name", "Mingfang Duan"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/account.rb:20
+  [1m[36mAccount Update (2.1ms)[0m  [1m[33mUPDATE "accounts" SET "password_digest" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["password_digest", "$2a$12$MTAHczs5d5LfxPnvvmuA3OQaoQvpAcPA7XzxoAravdoZAeoAwECVW"], ["updated_at", "2019-08-13 22:17:48.311216"], ["id", 9]]
+  ↳ app/models/account.rb:20
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/account.rb:20
+Redirected to http://localhost:3000/accounts/9
+Completed 302 Found in 294ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/accounts/9" for ::1 at 2019-08-13 18:17:48 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  [1m[36mHolding Load (0.2ms)[0m  [1m[34mSELECT "holdings".* FROM "holdings" WHERE "holdings"."account_id" = ?[0m  [["account_id", 9]]
+  ↳ app/views/accounts/show.html.erb:25
+  Rendered accounts/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 60ms (Views: 55.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2019-08-13 18:17:56 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-13 18:17:56 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 67ms (Views: 61.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:17:58 -0400
+Started GET "/auth/facebook" for ::1 at 2019-08-13 18:17:59 -0400
+Started GET "/auth/facebook/callback?code=AQCLhpg6-ObriJNRgv2dMfvkxqF-JtY5Fs-1tRkYO4Qa8Iulw_RhdH_oIul6Pszn0EO-8iOscaf2M_y5Dmb-WOw3QA-oMp-VhgW3yezveVUorAZuWOOfuWPl4sUutcYW5Yb5V4S1Pyp4THU-yutJuPq1idELee7HQLW9cb_-UdHjnxCI5wibYRFXwgB4SI4UVZbYUPBbEgPgVm7oe6gDL4HHnx_CCyRPZJiwI-szJ937yLh6yWM2_XHxyzvZ7eWQzH9h7s1SUDJUv4i5x5-GwlZW55FurgL2WPnyMF97iEH_zzPZW9HfjTkV28PUMO6UI80&state=91dcb7e33f6b8a68db55bad65abef4f3648edfec11842892" for ::1 at 2019-08-13 18:17:59 -0400
+Processing by SessionsController#fbcreate as HTML
+  Parameters: {"code"=>"AQCLhpg6-ObriJNRgv2dMfvkxqF-JtY5Fs-1tRkYO4Qa8Iulw_RhdH_oIul6Pszn0EO-8iOscaf2M_y5Dmb-WOw3QA-oMp-VhgW3yezveVUorAZuWOOfuWPl4sUutcYW5Yb5V4S1Pyp4THU-yutJuPq1idELee7HQLW9cb_-UdHjnxCI5wibYRFXwgB4SI4UVZbYUPBbEgPgVm7oe6gDL4HHnx_CCyRPZJiwI-szJ937yLh6yWM2_XHxyzvZ7eWQzH9h7s1SUDJUv4i5x5-GwlZW55FurgL2WPnyMF97iEH_zzPZW9HfjTkV28PUMO6UI80", "state"=>"91dcb7e33f6b8a68db55bad65abef4f3648edfec11842892"}
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."provider" = ? AND "accounts"."uid" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "10220418271427236"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/account.rb:20
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? AND "accounts"."id" != ? LIMIT ?[0m  [["name", "Mingfang Duan"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/account.rb:20
+  [1m[36mAccount Update (0.6ms)[0m  [1m[33mUPDATE "accounts" SET "password_digest" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["password_digest", "$2a$12$FtnZuVV3uSePS3YMPnf4GeIh8i5G4elXhoPMDpB7yRSlqGaQWG/ZO"], ["updated_at", "2019-08-13 22:17:59.931019"], ["id", 9]]
+  ↳ app/models/account.rb:20
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/account.rb:20
+Redirected to http://localhost:3000/accounts/9
+Completed 302 Found in 320ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/accounts/9" for ::1 at 2019-08-13 18:17:59 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  [1m[36mHolding Load (0.2ms)[0m  [1m[34mSELECT "holdings".* FROM "holdings" WHERE "holdings"."account_id" = ?[0m  [["account_id", 9]]
+  ↳ app/views/accounts/show.html.erb:25
+  Rendered accounts/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 96ms (Views: 92.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2019-08-13 18:21:06 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-13 18:21:06 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 69ms (Views: 62.7ms | ActiveRecord: 0.2ms)
+
+

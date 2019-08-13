@@ -16,7 +16,7 @@ class Account < ApplicationRecord
             acc.provider = auth.provider
             acc.uid = auth.uid
             acc.name = auth.info.name unless acc.name != nil
-            acc.password = SecureRandom.urlsafe_base64 unless acc.password != nil
+            acc.password = SecureRandom.hex(10) unless acc.password != nil
             acc.save!
         end
     end
