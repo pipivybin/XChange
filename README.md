@@ -1,4 +1,4 @@
-# XChange
+# XChange -- A Ruby On Rails Project!
 
 ## Introduction
 
