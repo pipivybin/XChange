@@ -1,23 +1,17 @@
-# README
+# XChange
 
-XChange is a mini exchange where people can trade stocks.
+Introduction
 
-Things you may want to cover:
+XChange is a mini stock exchange where people can trade stocks. Users can sign up as either an investor account, which can buy and sell all the listed stocks, or a broker account, which can list stocks on the exchange to trade. 
 
-* Ruby version
+Usage
 
-* System dependencies
+After cloning the repo, run bundle to install dependencies. To migrate your local database, run rake db:migrate. To start the application on your machine, run 'rails s' from the application root. In a browser, go to http://localhost:3000/ to begin.
 
-* Configuration
+Contributing
 
-* Database creation
+Bug reports and pull requests are welcome on GitHub at https://github.com/pipivybin/XChange. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Database initialization
+License
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The project is available as open source under the terms of the MIT License.
