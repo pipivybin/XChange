@@ -11,7 +11,7 @@ class Account < ApplicationRecord
         where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |acc|
             acc.provider = auth.provider
             acc.uid = auth.uid
-            acc.name = auth.name
+            acc.name = auth.info.name unless acc.name != nil
             acc.password = SecureRandom.urlsafe_base64 unless acc.password != nil
             acc.save!
         end
