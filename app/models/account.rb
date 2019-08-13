@@ -7,6 +7,10 @@ class Account < ApplicationRecord
     has_many :holdings
     has_many :stocks, through: :holdings
 
+    scope :investors, -> { where(broker_acc: false) }
+    scope :vips, -> { investors.where("balance > 1000000") }
+
+
     def self.from_omniauth(auth)
         where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |acc|
             acc.provider = auth.provider
