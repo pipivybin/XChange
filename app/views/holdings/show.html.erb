@@ -1,0 +1,16 @@
+<% if flash[:alert] %>
+	<%= flash[:alert] %>
+<% end %>
+
+<h4><%= "You are selling #{@stock.name} stocks" %></h4>
+<p>Your purchase price: <%= @holding.price %></p>
+<p>Your selling price: <%= @stock.price %></p>
+<p>Your have: <%= @holding.balance %> stocks</p><br>
+
+<%= form_for @holding do |f| %>
+    <%= f.hidden_field :stock_id %>
+    Sell: <%= text_field_tag :unit %> stocks<br>
+    <br>
+    <br>
+    <%= f.submit "Sell Stock" %>
+   <% end %>
