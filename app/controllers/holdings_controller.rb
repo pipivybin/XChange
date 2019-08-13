@@ -16,11 +16,11 @@ class HoldingsController < ApplicationController
                 redirect_to stocks_path
             else
                 if !params[:holding][:balance].empty?
+                    # binding.pry
                     total = current_account.balance - cost
                     @holding = Holding.create(holding_params)
                     @holding.account = current_account
                     @holding.stock = @stock 
-                    @holding.balance = params[:holding][:balance].to_i
                     current_account.update(balance: total)
                     @holding.price = @stock.price
                     @holding.save
