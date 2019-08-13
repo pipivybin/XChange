@@ -31,6 +31,12 @@ class AccountsController < ApplicationController
         end
     end
 
+    def update
+        current_account.balance = params[:account][:balance]
+        current_account.broker_acc = params[:account][:broker_acc]
+        redirect_to account_path(@account)
+    end
+
     private
 
     def account_params

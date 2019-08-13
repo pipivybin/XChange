@@ -35,5 +35,14 @@ Stock Portfolio:<br>
 <br>
 <br>
 
+<% if @account.provider %>
+<%= form_for @account do |f| %>
+  Balance: <%= f.text_field :balance %><br>
+  Broker Account: <%= f.check_box :broker_acc %>
+  <br>
+  <br>
+  <%= f.submit "Enable Account" %>
+ <% end %>
+ <% end %>
 
 <%= link_to "Stock Page", stocks_path %>
