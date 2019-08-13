@@ -16,7 +16,8 @@ class StocksController < ApplicationController
     end
     
     def create
-        @stock = Stock.create(stock_params)
+        @stock = Stock.find_or_create_by(name: params[:stock][:name])
+        @stock.update(stock_params)
         redirect_to stock_path(@stock)
     end
 
