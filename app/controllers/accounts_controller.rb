@@ -16,6 +16,7 @@ class AccountsController < ApplicationController
         @account = Account.new(account_params)
         if @account.valid?
             @account.save
+            #raise @account.inspect
             session[:acc_id] = @account.id
             redirect_to account_path(@account)
         else

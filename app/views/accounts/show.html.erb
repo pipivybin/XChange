@@ -27,7 +27,7 @@ Stock Portfolio:<br>
         <td><%= s.stock.name %></td>
         <td><%= s.balance %></td>
         <td><%= s.price %></td>
-        <td><%= link_to "Buy #{s.stock.name}", stock_path(s.stock) %></td>
+        <td><%= link_to "Buy #{s.stock.name}", new_stock_holding_path(s.stock) %></td>
     </tr>
   <% end %>
 </tbody>
