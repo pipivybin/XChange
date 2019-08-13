@@ -2,7 +2,7 @@
 
 ## Introduction
 
-XChange is a mini stock exchange where people can trade stocks. Users can sign up as either an investor account, which can buy and sell all the listed stocks, or a broker account, which can list stocks on the exchange to trade. 
+XChange is a mini stock exchange where people can trade stocks. Users can sign up with either an investor account, which can buy and sell all the listed stocks, or a broker account, which can list stocks on the exchange to trade. 
 
 ## Usage
 
