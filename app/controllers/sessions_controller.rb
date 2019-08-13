@@ -20,11 +20,8 @@ class SessionsController < ApplicationController
   end
 
   def fbcreate
-    binding.pry
-    @account = Account.find_or_create_by(uid: auth['uid']) do |u|
-      u.name = auth['info']['name']
-    end
-    
+    # binding.pry
+    @account = Account.from_omniauth(auth)
     session[:acc_id] = @account.id
     redirect_to account_path(@account)
   end

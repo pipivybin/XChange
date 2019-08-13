@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_11_184559) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uid"
+    t.string "provider"
   end
 
   create_table "holdings", force: :cascade do |t|
