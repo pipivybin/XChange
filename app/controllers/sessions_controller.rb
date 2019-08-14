@@ -20,7 +20,6 @@ class SessionsController < ApplicationController
   end
 
   def fbcreate
-    
     @account = Account.from_omniauth(auth)
     session[:acc_id] = @account.id
     redirect_to account_path(@account)
