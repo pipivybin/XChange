@@ -1,6 +1,4 @@
-<% if flash[:alert] %>
-	<%= flash[:alert] %>
-<% end %>
+<%= render 'accounts/alert' %>
 
 <%= link_to "Sign Up", signup_path %><br>
 <%= link_to('Log in with Facebook!', '/auth/facebook') %>

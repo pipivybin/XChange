@@ -1,6 +1,5 @@
-<% if flash[:alert] %>
-	<%= flash[:alert] %>
-<% end %>
+<%= render 'accounts/alert' %>
+
 
 <h4><%= "You are selling #{@stock.name} stocks" %></h4>
 <p>Your purchase price: <%= @holding.price %></p>

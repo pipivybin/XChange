@@ -1,6 +1,4 @@
-<% if flash[:alert] %>
-	<%= flash[:alert] %>
-<% end %>
+<%= render 'alert' %>
 
 <p>Name: <%= @account.name %></p>
 <p>Balance: <%= @account.balance %></p>
