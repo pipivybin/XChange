@@ -1,4 +1,7 @@
 <%= form_for @stock do |f| %>
-    <%= render 'form' %>
-    <%= f.submit "Edit Stock" %>
+   Stock Name: <%= f.text_field :name %><br>
+   Stock Price: <%= f.text_field :price %><br>
+   <br>
+   <br>
+   <%= f.submit "Edit Stock" %>
    <% end %>
