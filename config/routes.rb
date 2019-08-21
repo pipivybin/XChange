@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   get 'signup', to: 'accounts#new'
   get 'logout', to: 'sessions#destroy'
+  post '/sessions/create', to: 'sessions#create'
 
   resources :accounts
   
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
 
   resources :holdings
 
+  
 
 end

@@ -21892,3 +21892,924 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 86ms (Views: 80.5ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for ::1 at 2019-08-21 15:31:05 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mfduan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 548ms (Views: 516.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-21 16:17:52 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 124ms (Views: 85.0ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-21 16:18:14 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CASb7GWrr+9bhDnfOlrlzqWkhOm/EXZcS0XXVFTWiX/jaEXq/wAadz4vD8Jgw0v3vbKxXAviAMbr78kmqI4oDw==", "account"=>{"name"=>"test1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "balance"=>"10000", "broker_acc"=>"1"}, "commit"=>"Create Account"}
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "test1"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:18
+  [1m[36mCACHE Account Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "test1"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:18
+  [1m[36mAccount Create (2.8ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "password_digest", "balance", "broker_acc", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "test1"], ["password_digest", "$2a$12$nvhMZMN3svbL8kpOQSeGaOtJybLYE/jzWXO89YIrz0/Rw1u/3C2.2"], ["balance", 10000], ["broker_acc", 1], ["created_at", "2019-08-21 20:18:14.619882"], ["updated_at", "2019-08-21 20:18:14.619882"]]
+  ↳ app/controllers/accounts_controller.rb:18
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:18
+Redirected to http://localhost:3000/accounts/14
+Completed 302 Found in 409ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/accounts/14" for ::1 at 2019-08-21 16:18:14 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.5ms)
+  [1m[36mHolding Load (0.3ms)[0m  [1m[34mSELECT "holdings".* FROM "holdings" WHERE "holdings"."account_id" = ?[0m  [["account_id", 14]]
+  ↳ app/views/accounts/show.html.erb:23
+  Rendered accounts/show.html.erb within layouts/application (84.0ms)
+Completed 200 OK in 153ms (Views: 144.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/stocks" for ::1 at 2019-08-21 16:18:24 -0400
+Processing by StocksController#index as HTML
+  Rendering stocks/index.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.9ms)
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:18
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/index.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 177ms (Views: 164.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/stocks/new" for ::1 at 2019-08-21 16:18:28 -0400
+Processing by StocksController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering stocks/new.html.erb within layouts/application
+  Rendered stocks/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 122ms (Views: 119.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/stocks" for ::1 at 2019-08-21 16:18:38 -0400
+Processing by StocksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JP1YxjM0y0H2OUUDgIBq2aJQvKjV9iQyCBNjA/kcV7px2xFEmBhcOUu8p8i/o8D4XKe1peZTT8u3DOR2mS1vgQ==", "stock"=>{"name"=>"Test", "price"=>"10"}, "commit"=>"Create Stock"}
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."name" = ? LIMIT ?[0m  [["name", "Test"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stocks_controller.rb:19
+  [1m[36mStock Create (0.7ms)[0m  [1m[32mINSERT INTO "stocks" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test"], ["created_at", "2019-08-21 20:18:38.036219"], ["updated_at", "2019-08-21 20:18:38.036219"]]
+  ↳ app/controllers/stocks_controller.rb:19
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stocks_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stocks_controller.rb:20
+  [1m[36mStock Update (1.3ms)[0m  [1m[33mUPDATE "stocks" SET "price" = ?, "updated_at" = ? WHERE "stocks"."id" = ?[0m  [["price", 10], ["updated_at", "2019-08-21 20:18:38.042699"], ["id", 9]]
+  ↳ app/controllers/stocks_controller.rb:20
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stocks_controller.rb:20
+Redirected to http://localhost:3000/stocks/9
+Completed 302 Found in 25ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/stocks/9" for ::1 at 2019-08-21 16:18:38 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 53ms (Views: 48.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stocks" for ::1 at 2019-08-21 16:18:40 -0400
+Processing by StocksController#index as HTML
+  Rendering stocks/index.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.9ms)
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:18
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/index.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 94ms (Views: 90.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/stocks/9" for ::1 at 2019-08-21 16:18:48 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 113ms (Views: 109.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stocks/9/holdings/new" for ::1 at 2019-08-21 16:18:50 -0400
+Processing by HoldingsController#new as HTML
+  Parameters: {"stock_id"=>"9"}
+  Rendering holdings/new.html.erb within layouts/application
+  Rendered holdings/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 143ms (Views: 117.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-21 16:18:55 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ps3IYGX4CW2121q+UtWPF7h2iq5c0v9HkmtLMX5wko9TZx6BODPCfG5irtn3BKtYkUlcFtyiQx+PAkB0CXH8xw==", "holding"=>{"stock_id"=>"9", "balance"=>"10"}, "commit"=>"Buy Stock"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:12
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:20
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/holdings_controller.rb:20
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:23
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? AND "accounts"."id" != ? LIMIT ?[0m  [["name", "test1"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:23
+  [1m[36mAccount Update (0.8ms)[0m  [1m[33mUPDATE "accounts" SET "balance" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["balance", 9900], ["updated_at", "2019-08-21 20:18:55.925337"], ["id", 14]]
+  ↳ app/controllers/holdings_controller.rb:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/holdings_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:25
+  [1m[36mHolding Create (0.8ms)[0m  [1m[32mINSERT INTO "holdings" ("account_id", "stock_id", "balance", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_id", 14], ["stock_id", 9], ["balance", 10], ["price", 10], ["created_at", "2019-08-21 20:18:55.933158"], ["updated_at", "2019-08-21 20:18:55.933158"]]
+  ↳ app/controllers/holdings_controller.rb:25
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/holdings_controller.rb:25
+Redirected to http://localhost:3000/stocks
+Completed 302 Found in 65ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/stocks" for ::1 at 2019-08-21 16:18:55 -0400
+Processing by StocksController#index as HTML
+  Rendering stocks/index.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.5ms)
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:18
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 61ms (Views: 58.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/accounts/14" for ::1 at 2019-08-21 16:18:57 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.8ms)
+  [1m[36mHolding Load (0.3ms)[0m  [1m[34mSELECT "holdings".* FROM "holdings" WHERE "holdings"."account_id" = ?[0m  [["account_id", 14]]
+  ↳ app/views/accounts/show.html.erb:23
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:26
+  Rendered accounts/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 103ms (Views: 97.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/stocks" for ::1 at 2019-08-21 16:19:06 -0400
+Processing by StocksController#index as HTML
+  Rendering stocks/index.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (2.9ms)
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:18
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/index.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 121ms (Views: 117.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/stocks/8" for ::1 at 2019-08-21 16:19:07 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25
+  Rendering stocks/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 86ms (Views: 82.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stocks/8/holdings/new" for ::1 at 2019-08-21 16:19:09 -0400
+Processing by HoldingsController#new as HTML
+  Parameters: {"stock_id"=>"8"}
+  Rendering holdings/new.html.erb within layouts/application
+  Rendered holdings/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 81ms (Views: 77.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/holdings" for ::1 at 2019-08-21 16:19:12 -0400
+Processing by HoldingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c/YkAiSuj12zNjhJZbecU3mvnonAnoWGILfyO9c3VI0eXPLjeWVETGiPzC7AZrgcUJBIMUDuOd493vl+oDY6xQ==", "holding"=>{"stock_id"=>"8", "balance"=>"2"}, "commit"=>"Buy Stock"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:12
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:20
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/holdings_controller.rb:20
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:23
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? AND "accounts"."id" != ? LIMIT ?[0m  [["name", "test1"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:23
+  [1m[36mAccount Update (1.6ms)[0m  [1m[33mUPDATE "accounts" SET "balance" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["balance", 8900], ["updated_at", "2019-08-21 20:19:12.658831"], ["id", 14]]
+  ↳ app/controllers/holdings_controller.rb:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/holdings_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:25
+  [1m[36mHolding Create (0.8ms)[0m  [1m[32mINSERT INTO "holdings" ("account_id", "stock_id", "balance", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_id", 14], ["stock_id", 8], ["balance", 2], ["price", 500], ["created_at", "2019-08-21 20:19:12.667666"], ["updated_at", "2019-08-21 20:19:12.667666"]]
+  ↳ app/controllers/holdings_controller.rb:25
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/holdings_controller.rb:25
+Redirected to http://localhost:3000/stocks
+Completed 302 Found in 34ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/stocks" for ::1 at 2019-08-21 16:19:12 -0400
+Processing by StocksController#index as HTML
+  Rendering stocks/index.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.4ms)
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:18
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered stocks/index.html.erb within layouts/application (62.8ms)
+Completed 200 OK in 110ms (Views: 107.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/accounts/14" for ::1 at 2019-08-21 16:19:14 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.7ms)
+  [1m[36mHolding Load (0.2ms)[0m  [1m[34mSELECT "holdings".* FROM "holdings" WHERE "holdings"."account_id" = ?[0m  [["account_id", 14]]
+  ↳ app/views/accounts/show.html.erb:23
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:26
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:26
+  Rendered accounts/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 79ms (Views: 70.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/stocks/9/holdings/23" for ::1 at 2019-08-21 16:19:18 -0400
+Processing by HoldingsController#show as HTML
+  Parameters: {"stock_id"=>"9", "id"=>"23"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:54
+  [1m[36mHolding Load (0.3ms)[0m  [1m[34mSELECT  "holdings".* FROM "holdings" WHERE "holdings"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:55
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:56
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering holdings/show.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.6ms)
+  Rendered holdings/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 77ms (Views: 68.5ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/holdings/23" for ::1 at 2019-08-21 16:19:26 -0400
+Processing by HoldingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G8tVpJmRvBnaW7gyLJugBG9i+s3nAgzvwJTo2arJn+VaCb20nfp49A5X+KOTENRBfWdsnuMMRK1R1wTo9v5VMg==", "holding"=>{"stock_id"=>"9"}, "unit"=>"5", "commit"=>"Sell Stock", "id"=>"23"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:68
+  [1m[36mHolding Load (0.3ms)[0m  [1m[34mSELECT  "holdings".* FROM "holdings" WHERE "holdings"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:69
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:76
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:76
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:76
+  [1m[36mHolding Update (3.8ms)[0m  [1m[33mUPDATE "holdings" SET "balance" = ?, "updated_at" = ? WHERE "holdings"."id" = ?[0m  [["balance", 5], ["updated_at", "2019-08-21 20:19:26.481225"], ["id", 23]]
+  ↳ app/controllers/holdings_controller.rb:76
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/holdings_controller.rb:76
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/holdings_controller.rb:78
+  [1m[36mAccount Exists (5.4ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? AND "accounts"."id" != ? LIMIT ?[0m  [["name", "test1"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/holdings_controller.rb:78
+  [1m[36mAccount Update (1.0ms)[0m  [1m[33mUPDATE "accounts" SET "balance" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["balance", 8950], ["updated_at", "2019-08-21 20:19:26.517200"], ["id", 14]]
+  ↳ app/controllers/holdings_controller.rb:78
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/holdings_controller.rb:78
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/accounts/14
+Completed 302 Found in 65ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/accounts/14" for ::1 at 2019-08-21 16:19:26 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.6ms)
+  [1m[36mHolding Load (0.2ms)[0m  [1m[34mSELECT "holdings".* FROM "holdings" WHERE "holdings"."account_id" = ?[0m  [["account_id", 14]]
+  ↳ app/views/accounts/show.html.erb:23
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:26
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/accounts/show.html.erb:26
+  Rendered accounts/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 67ms (Views: 56.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/logout" for ::1 at 2019-08-21 16:19:40 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-21 16:19:40 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 56ms (Views: 48.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-21 16:19:56 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X+BHYQ+fVIGOk+bhYQ0awGEs2O+ncWAOyegEt2KXyve0jJlnlTThGes40Pw7lLT5eTrtWhOCFpRpQhrFns9rhw==", "account"=>{"name"=>"test1", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "test1"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:17
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 719ms (Views: 152.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2019-08-21 16:20:17 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (3.3ms)
+  Rendered sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 79ms (Views: 71.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-21 16:20:26 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6vl50xfIXCBq2vIXiO/jkEDgIpU2KSr2O+IeL4kQtE0BlafVjWPpuA9xxArSdk2pWPYXIILaXGybSABddUgVPQ==", "account"=>{"name"=>"test1", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "test1"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:17
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 427ms (Views: 40.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2019-08-21 16:20:32 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (1.9ms)
+  Rendered sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 95ms (Views: 88.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2019-08-21 16:20:33 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 69ms (Views: 66.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-21 16:20:50 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pJ24E5Id2HLBmfRlnxMLPeqFeebXxb8w2qT4ZVikMV5P8WYVCLZt6qQywnjFiqUE8pNMU2M2yap6DuYXpPyQLg==", "account"=>{"name"=>"test5", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "balance"=>"10000", "broker_acc"=>"1"}, "commit"=>"Create Account"}
+  [1m[36mAccount Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "test5"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:18
+  [1m[36mCACHE Account Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "test5"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:18
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "password_digest", "balance", "broker_acc", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "test5"], ["password_digest", "$2a$12$jaoxybwBOn8VDhVe8UAlUOTPSzoz5F0dl/1ZMukiADIxktfZlZhtW"], ["balance", 10000], ["broker_acc", 1], ["created_at", "2019-08-21 20:20:51.160688"], ["updated_at", "2019-08-21 20:20:51.160688"]]
+  ↳ app/controllers/accounts_controller.rb:18
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:18
+Redirected to http://localhost:3000/accounts/15
+Completed 302 Found in 411ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/accounts/15" for ::1 at 2019-08-21 16:20:51 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.4ms)
+  [1m[36mHolding Load (0.1ms)[0m  [1m[34mSELECT "holdings".* FROM "holdings" WHERE "holdings"."account_id" = ?[0m  [["account_id", 15]]
+  ↳ app/views/accounts/show.html.erb:23
+  Rendered accounts/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 42ms (Views: 38.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2019-08-21 16:20:53 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-21 16:20:53 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 76ms (Views: 72.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-21 16:21:01 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MbNykn9R4rdxl7l9ZAzxQO9DTJOcje1++4sOdtB/Vjba36yU5fpXLxQ8j2A+lV9591V5Jih+m+RbIRAELCf3Rg==", "account"=>{"name"=>"test5", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "test5"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:17
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 464ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2019-08-21 16:23:45 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 73ms (Views: 50.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/accounts" for ::1 at 2019-08-21 16:23:51 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pB48rxOqmYzQ0fEUge4AOoJR3S8nloWG3S+aPZoqt31PcuKpiQEsFLV6xwnbd64DmkfompNl8xx9hYRPZnIWDQ==", "account"=>{"name"=>"test5", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "test5"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:17
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 410ms (Views: 43.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2019-08-21 16:25:53 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms)
+
+
+  
+NameError (uninitialized constant SessionsController::Session):
+  
+app/controllers/sessions_controller.rb:5:in `new'
+Started GET "/accounts" for ::1 at 2019-08-21 16:29:01 -0400
+Processing by AccountsController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-21 16:29:01 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (uninitialized constant SessionsController::Session):
+  
+app/controllers/sessions_controller.rb:5:in `new'
+Started GET "/" for ::1 at 2019-08-21 16:29:04 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (uninitialized constant SessionsController::Session):
+  
+app/controllers/sessions_controller.rb:5:in `new'
+Started GET "/" for ::1 at 2019-08-21 16:29:33 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 88ms (Views: 65.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-08-21 16:29:35 -0400
+Started GET "/auth/facebook" for ::1 at 2019-08-21 16:29:35 -0400
+Started GET "/auth/facebook/callback?code=AQDGC_ngxM3L9SvHBbq2DX8zBBIaIr-KcUK0QB-C-KQQShSNnStmSQs_TdKwiPzqvyMnd3yuui9StvlBjsv4q0irHM1PuG1R3YSIzE4Wv4ETm7mP-s_GU5exVrYZ4XWzh5XB8m4fHO8tYkISZUApeyWrPxQwOXErMEaH8dZwdkRbuiz4w-rufl6ZySJpJbTrp9Ie3kXQ4wBdmKFN7-v7D5hhTL-0jHc-mBfXltShYPsoLxB8FuG6DUHAx4iFmouKkRdILjMdOqNgVEI4Xg_oRUOGYC8_Ksq7aCVbQJ6l4e79rEKcEgMeRati6guFauXpi7M&state=618b86f8bbc885e317249999e4cb34965eabce7c1d8ea8cc" for ::1 at 2019-08-21 16:29:36 -0400
+Processing by SessionsController#fbcreate as HTML
+  Parameters: {"code"=>"AQDGC_ngxM3L9SvHBbq2DX8zBBIaIr-KcUK0QB-C-KQQShSNnStmSQs_TdKwiPzqvyMnd3yuui9StvlBjsv4q0irHM1PuG1R3YSIzE4Wv4ETm7mP-s_GU5exVrYZ4XWzh5XB8m4fHO8tYkISZUApeyWrPxQwOXErMEaH8dZwdkRbuiz4w-rufl6ZySJpJbTrp9Ie3kXQ4wBdmKFN7-v7D5hhTL-0jHc-mBfXltShYPsoLxB8FuG6DUHAx4iFmouKkRdILjMdOqNgVEI4Xg_oRUOGYC8_Ksq7aCVbQJ6l4e79rEKcEgMeRati6guFauXpi7M", "state"=>"618b86f8bbc885e317249999e4cb34965eabce7c1d8ea8cc"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."provider" = ? AND "accounts"."uid" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "10220418271427236"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/account.rb:20
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."name" = ? AND "accounts"."id" != ? LIMIT ?[0m  [["name", "Mingfang Duan"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/models/account.rb:20
+  [1m[36mAccount Update (0.6ms)[0m  [1m[33mUPDATE "accounts" SET "password_digest" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["password_digest", "$2a$12$mz6WoSCw6xtmxmY21w/WZOBBqvo7HMsKJUs5WE8lPvbkw2IasM09a"], ["updated_at", "2019-08-21 20:29:37.101462"], ["id", 9]]
+  ↳ app/models/account.rb:20
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/account.rb:20
+Redirected to http://localhost:3000/accounts/9
+Completed 302 Found in 512ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/accounts/9" for ::1 at 2019-08-21 16:29:37 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.7ms)
+  [1m[36mHolding Load (0.3ms)[0m  [1m[34mSELECT "holdings".* FROM "holdings" WHERE "holdings"."account_id" = ?[0m  [["account_id", 9]]
+  ↳ app/views/accounts/show.html.erb:23
+  Rendered accounts/show.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 92ms (Views: 82.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/logout" for ::1 at 2019-08-21 16:41:28 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-21 16:41:28 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (330.9ms)
+Completed 500 Internal Server Error in 352ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `session_new_path' for #<#<Class:0x00007fb7ae87a880>:0x00007fb7ae878e68>
+Did you mean?  session_path
+               sessions_path):
+     5: <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+     6: <br>
+     7: <br>
+     8: <%= form_for @account, url: session_new_path do |f| %>
+     9:     Account Name: <%= f.text_field :name %><br>
+    10:     Password: <%= f.password_field :password %><br>
+    11:     <br>
+  
+app/views/sessions/new.html.erb:8:in `_app_views_sessions_new_html_erb__3695808546887317822_70213441935620'
+Started GET "/logout" for ::1 at 2019-08-21 16:43:01 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-21 16:43:01 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 65ms (Views: 42.1ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/sessions/create" for ::1 at 2019-08-21 16:43:09 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/sessions/create"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/sessions/create" for ::1 at 2019-08-21 16:43:45 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/sessions/create"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/sessions/create" for ::1 at 2019-08-21 16:43:56 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/sessions/create"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/sessions/create" for ::1 at 2019-08-21 16:46:13 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/sessions/create"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/sessions/create" for ::1 at 2019-08-21 16:46:26 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zKJ6S5pKq825U2Elw1/feXQ6OSudl/ofDzbqcKemmEBB4e60263E18JuNg/mH2k5Fhk3QocqPY47aeDdQEfB6Q==", "account"=>{"name"=>"test5", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:13:in `create'
+Started POST "/sessions/create" for ::1 at 2019-08-21 16:46:55 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zKJ6S5pKq825U2Elw1/feXQ6OSudl/ofDzbqcKemmEBB4e60263E18JuNg/mH2k5Fhk3QocqPY47aeDdQEfB6Q==", "account"=>{"name"=>"test5", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."name" = ? LIMIT ?[0m  [["name", "test5"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13
+Redirected to http://localhost:3000/accounts/15
+Completed 302 Found in 290ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/accounts/15" for ::1 at 2019-08-21 16:46:55 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/_alert.html.erb (1.4ms)
+  [1m[36mHolding Load (1.5ms)[0m  [1m[34mSELECT "holdings".* FROM "holdings" WHERE "holdings"."account_id" = ?[0m  [["account_id", 15]]
+  ↳ app/views/accounts/show.html.erb:23
+  Rendered accounts/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 2.1ms)
+
+

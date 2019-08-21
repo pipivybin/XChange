@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
         if logged_in?
             redirect_to account_path(current_account)
         else
-        @account = Account.new
+            @account = Account.new
         end
     end
     
