@@ -38,6 +38,9 @@ class AccountsController < ApplicationController
         redirect_to account_path(@account)
     end
 
+    def most
+    end
+
     private
 
     def account_params
